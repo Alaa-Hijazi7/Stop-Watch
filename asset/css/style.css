@@ -80,6 +80,10 @@ h2{
   display:none;
   animation: fadein .8s;
 }
+.dtdsd{
+  display: flex;
+  flex-direction: row;
+}
 @keyframes fadein {
     from {
         opacity:0;
@@ -90,7 +94,7 @@ h2{
 }
 .panel-title{
   font-size:1.5em;
-  font-weight:bold
+  font-weight:bold;
 }
 .radio{
   display:none;
