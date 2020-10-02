@@ -43,5 +43,20 @@ let leadingZero = (time) => {
 
 let btnStop = document.getElementById('stop-btn');
 btnStop.addEventListener('click',function(){
-    clearInterval(interval);
+    clearInterval(interval); //stop the timer
+});
+
+//reset btn
+let btnReset = document.getElementById('Reset-btn');
+btnReset.addEventListener('click', function (){
+    clearInterval(interval) //stop the timer
+    count = 0;
+    min = 0;
+    sec = 0;
+    millsec = 0;
+    interval = 0;
+    timeRunning = false;
+    document.getElementById('min').textContent = '00';
+    document.getElementById('sec').textContent = '00';
+    document.getElementById('m-sec').textContent = '00';
 });
