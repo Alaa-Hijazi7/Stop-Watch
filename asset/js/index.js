@@ -90,3 +90,4 @@ btnReset.addEventListener('click', function (){
     document.getElementById('sec').textContent = '00';
     document.getElementById('m-sec').textContent = '00';
 });
+
