@@ -2,22 +2,46 @@ let count = 0;
 let min = 0;
 let sec = 0;
 let millsec = 0;
+let interval = 0;
+let timeRunning = false;
 //start
 let startTimer = () => {
-    count++;
+    count++;    
 
     min = Math.floor( (count /100) /60 );
     sec = Math.floor( (count /100) - (min *60) );
     millsec = Math.floor( count-(sec *100) - (min *6000) );
 
-    document.getElementById('m-sec').textContent = count;
-    document.getElementById('min').textContent = min;
-    document.getElementById('sec').textContent = sec;
-    document.getElementById('m-sec').textContent = millsec;
+
+
+    document.getElementById('min').textContent = leadingZero(min);
+    document.getElementById('sec').textContent = leadingZero(sec);
+    document.getElementById('m-sec').textContent = leadingZero(millsec);
 
 };
 
 let btnStart = document.getElementById('start-btn');
 btnStart.addEventListener('click', function(){
-    setInterval(startTimer, 10);
+    if(!timeRunning){
+            interval = setInterval(startTimer, 10);
+            timeRunning = true;
+    }else{
+        console.log('The timer has already started');
+    }
+});
+
+//leading 0
+let leadingZero = (time) => {
+    if (time <= 9){
+        return "0" + time;
+    }else{
+        return time;
+    }
+}
+
+//stop btn
+
+let btnStop = document.getElementById('stop-btn');
+btnStop.addEventListener('click',function(){
+    clearInterval(interval);
 });
