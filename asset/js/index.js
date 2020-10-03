@@ -99,9 +99,9 @@ function countDown() {
       interval = setInterval(updateCount, 1000);
       timeRunning = true;
     } else {
-      alert("The timer has already started");
+      console.log("The timer has already started");
     }
-
+    
     function updateCount() {
       const minutes = Math.floor(time / 60);
       let seconds = time % 60;
@@ -109,6 +109,6 @@ function countDown() {
       time--;
     }
   } else {
-    alert("set value in input");
+    console.log("set value in input");
   }
 }
