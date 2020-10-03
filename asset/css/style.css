@@ -112,3 +112,25 @@ h2 {
   color: #000;
   border-top: 3px solid #000;
 }
+#inputCount {
+  margin-top: 10px;
+  padding: 13px;
+  padding-left: 20px;
+  padding-right: 60px;
+  border-radius: 10px;
+  border: 1px solid rgb(204, 204, 204);
+  outline: none;
+  font-size: 16px;
+}
+#countdown {
+  font-size: 40px;
+  margin: 10px;
+  margin-top: 70px;
+  margin-left: 80px;
+  margin-top: 10px;
+}
+.centerbtn{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
