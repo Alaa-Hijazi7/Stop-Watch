@@ -71,7 +71,8 @@ let leadingZero = (time) => {
 
 //stop btn
 
-let btnStop = document.getElementById('stop-btn');
+let btnStop = document.getElementById('stop
+    - btn');
 btnStop.addEventListener('click',function(){
     clearInterval(interval); //stop the timer
 });
@@ -92,3 +93,7 @@ btnReset.addEventListener('click', function (){
 });
 
 
+//timer
+
+let startCount = 10;
+let time = startCount * 60;
