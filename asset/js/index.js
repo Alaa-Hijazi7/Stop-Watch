@@ -101,12 +101,16 @@ function countDown() {
     } else {
       console.log("The timer has already started");
     }
-    
+
     function updateCount() {
       const minutes = Math.floor(time / 60);
       let seconds = time % 60;
       countEl.textContent = `${minutes}:${seconds}`;
-      time--;
+      if (time > 0) {
+        time--;
+      } else {
+        time = 0;
+      }
     }
   } else {
     console.log("set value in input");
