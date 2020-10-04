@@ -98,13 +98,26 @@ function countDown() {
     if (!timeRunning) {
       interval = setInterval(updateCount, 1000);
       timeRunning = true;
+    } else if (interval === 0) {
+      timeRunning = false;
     } else {
       console.log("The timer has already started");
     }
 
+    let btnStoptimer = document.getElementById("stopTimerbtn");
+    btnStoptimer.addEventListener("click", function () {
+      clearInterval(interval); //stop the timer
+    });
+
     function updateCount() {
-      const minutes = Math.floor(time / 60);
+      let minutes = Math.floor(time / 60);
       let seconds = time % 60;
+      if (minutes < 10) {
+        minutes = "0" + minutes;
+      }
+      if (seconds < 10) {
+        seconds = "0" + seconds;
+      }
       countEl.textContent = `${minutes}:${seconds}`;
       if (time > 0) {
         time--;
