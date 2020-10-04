@@ -104,9 +104,15 @@ function countDown() {
       console.log("The timer has already started");
     }
 
-    let btnStoptimer = document.getElementById("stopTimerbtn");
-    btnStoptimer.addEventListener("click", function () {
+    let btnReset = document.getElementById("resetTimerbtn");
+    btnReset.addEventListener("click", function () {
       clearInterval(interval); //stop the timer
+      count = 0;
+      min = 0;
+      sec = 0;
+      interval = 0;
+      timeRunning = false;
+      document.getElementById("countdown").textContent = "00:00";
     });
 
     function updateCount() {
